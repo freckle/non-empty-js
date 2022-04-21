@@ -2,7 +2,7 @@
     "name": "@freckle/non-empty-js",
     "version": "1.0.0",
     "description": "Construct and operate on non-empry arrays with type-safety",
-    "main": "./lib/index.js",
+    "main": "./dist/index.js",
     "repository": "https://github.com/freckle/non-empty-js.git",
     "author": "Freckle",
     "license": "MIT",
