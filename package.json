@@ -22,7 +22,7 @@
         "@babel/core": "^7.17.0",
         "@babel/preset-env": "^7.16.11",
         "@babel/preset-flow": "^7.16.7",
-        "flow-bin": "^0.171.0",
+        "flow-bin": "0.110.0",
         "flow-copy-source": "2.0.9",
         "jest": "^27.4.7",
         "prettier": "^2.5.1"
