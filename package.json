@@ -1,5 +1,5 @@
 {
-    "name": "@freckle/non-empty-js",
+    "name": "@freckle/non-empty",
     "version": "1.0.0",
     "description": "Construct and operate on non-empry arrays with type-safety",
     "main": "./dist/index.js",
