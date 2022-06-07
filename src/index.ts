@@ -1,5 +1,3 @@
-/* @flow */
-
 import first from 'lodash/first'
 import last from 'lodash/last'
 import map from 'lodash/map'
@@ -11,8 +9,8 @@ class NonEmpty {}
 
 export type NonEmptyArray<T> = Array<T> & NonEmpty
 
-export function mkNonEmpty<T>(array: Array<T>): ?NonEmptyArray<T> {
-  return array.length === 0 ? null : ((array: any): NonEmptyArray<T>)
+export function mkNonEmpty<T>(array: Array<T>): NonEmptyArray<T> | undefined | null {
+  return array.length === 0 ? null : (array as any as NonEmptyArray<T>)
 }
 
 export function mkNonEmptyFromJust<T>(array: Array<T>): NonEmptyArray<T> {
@@ -78,7 +76,7 @@ export function initOnNonEmpty<T>(array: NonEmptyArray<T>): Array<T> {
 }
 
 export function nonEmptyToArray<T>(array: NonEmptyArray<T>): Array<T> {
-  return (array: Array<T>)
+  return array as Array<T>
 }
 
 export function unconsOnNonEmpty<T>(array: NonEmptyArray<T>): [T, Array<T>] {
