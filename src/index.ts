@@ -2,7 +2,7 @@ import first from 'lodash/first'
 import last from 'lodash/last'
 import map from 'lodash/map'
 import flatten from 'lodash/flatten'
-import {type ReadOnlyMapIterator} from 'lodash'
+import {type ArrayIterator, type ListIterator} from 'lodash'
 import {fromJust} from '@freckle/maybe'
 
 class NonEmpty {}
@@ -40,7 +40,7 @@ export function mkNonEmptyFromLast<T>(init: Array<T>, last: T): NonEmptyArray<T>
 
 export function mapOnNonEmpty<T, U>(
   nonEmpty: NonEmptyArray<T>,
-  f: ReadOnlyMapIterator<T, U>
+  f: ListIterator<T, U> | ArrayIterator<T, U>
 ): NonEmptyArray<U> {
   return fromJust(mkNonEmpty(map(nonEmpty, f)), 'Array that should have been non-empty was empty')
 }
