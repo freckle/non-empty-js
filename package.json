@@ -23,6 +23,7 @@
     "@babel/preset-env": "^7.16.11",
     "@types/jest": "^28.1.1",
     "@types/lodash": "^4.14.182",
+    "flow-bin": "0.110.0",
     "flowgen": "^1.20.0",
     "jest": "^27.4.7",
     "prettier": "^2.5.1",
