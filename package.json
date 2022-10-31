@@ -9,7 +9,7 @@
   "scripts": {
     "build": "tsc -d && yarn run gen-flow",
     "gen-flow": "node ./gen-flow.js",
-    "test": "jest",
+    "test": "jest && yarn flow",
     "format": "prettier --write 'src/**/*.js'",
     "check-git-clean": "./check-git-clean.sh"
   },
