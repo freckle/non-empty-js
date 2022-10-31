@@ -1,5 +1,5 @@
 //@flow
-import { type, ArrayIterator, type, ListIterator } from "lodash";
+import { type ReadOnlyMapIterator } from "lodash";
 declare class NonEmpty {}
 export type NonEmptyArray<T> = Array<T> & NonEmpty;
 declare export function mkNonEmpty<T>(
@@ -19,7 +19,7 @@ declare export function mkNonEmptyFromLast<T>(
 ): NonEmptyArray<T>;
 declare export function mapOnNonEmpty<T, U>(
   nonEmpty: NonEmptyArray<T>,
-  f: ListIterator<T, U> | ArrayIterator<T, U>
+  f: ReadOnlyMapIterator<T, U> | ReadOnlyMapIterator<T, U>
 ): NonEmptyArray<U>;
 declare export function lastOnNonEmpty<T>(array: NonEmptyArray<T>): T;
 declare export function headOnNonEmpty<T>(array: NonEmptyArray<T>): T;
