@@ -930,9 +930,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@freckle/maybe@https://github.com/freckle/maybe-js.git#v2.1.0":
-  version "2.0.0"
-  resolved "https://github.com/freckle/maybe-js.git#deab1f020e54c644b0836d306b1a57bad9e620a9"
+"@freckle/maybe@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@freckle/maybe/-/maybe-2.1.0.tgz#ef3ab0cf5e7bdfc69f2d0a86ddd59a6c8397c6c8"
+  integrity sha512-WF6McGA11NoxgEO2gXaELPN1T1jY9p9IZUzmY1AJAtsZoVpyZns0vNNdUh60Z3Bp4hJhaThMtIcQjmU5fFTdvg==
   dependencies:
     lodash "^4.17.21"
 
