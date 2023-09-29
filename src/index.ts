@@ -2,6 +2,7 @@ import first from 'lodash/first'
 import last from 'lodash/last'
 import map from 'lodash/map'
 import flatten from 'lodash/flatten'
+import sortBy from 'lodash/sortBy'
 import {type ArrayIterator, type ListIterator} from 'lodash'
 import {fromJust} from '@freckle/maybe'
 
@@ -9,7 +10,7 @@ class NonEmpty {}
 
 export type NonEmptyArray<T> = Array<T> & NonEmpty
 
-export function mkNonEmpty<T>(array: Array<T>): NonEmptyArray<T> | undefined | null {
+export function mkNonEmpty<T>(array: Array<T>): NonEmptyArray<T> | null {
   return array.length === 0 ? null : (array as any as NonEmptyArray<T>)
 }
 
@@ -47,7 +48,7 @@ export function mapOnNonEmpty<T, U>(
 
 export function lastOnNonEmpty<T>(array: NonEmptyArray<T>): T {
   const lastElem = last(array)
-  if (lastElem === null || lastElem === undefined) {
+  if (lastElem === undefined) {
     throw new TypeError(
       "This definitely shouldn't happen! The types declare this array to be non-empty"
     )
@@ -58,7 +59,7 @@ export function lastOnNonEmpty<T>(array: NonEmptyArray<T>): T {
 
 export function headOnNonEmpty<T>(array: NonEmptyArray<T>): T {
   const firstElem = first(array)
-  if (firstElem === null || firstElem === undefined) {
+  if (firstElem === undefined) {
     throw new TypeError(
       "This definitely shouldn't happen! The types declare this array to be non-empty"
     )
@@ -88,6 +89,30 @@ export function flattenOnNonEmpty<T>(array: NonEmptyArray<NonEmptyArray<T>>): No
     mkNonEmpty(flatten(nonEmptyToArray(array))),
     'Array that should have been non-empty was empty'
   )
+}
+
+// https://hackage.haskell.org/package/base-4.18.1.0/docs/Data-List-NonEmpty.html#v:groupAllWith
+// `key` is used for sorting and equality comparisons. It is called at least
+// twice per item
+export function groupAllWith<A, B>(key: (a: A) => B, array: Array<A>): Array<NonEmptyArray<A>> {
+  const sorted = sortBy(array, key)
+
+  const results: Array<NonEmptyArray<A>> = []
+
+  sorted.forEach(v => {
+    const lastGroup = last(results)
+
+    // Item matches prior group so put it there
+    if (lastGroup !== undefined && key(headOnNonEmpty(lastGroup)) === key(v)) {
+      lastGroup.push(v)
+
+    // Item doesn't match prior group (or group doesn't exist), make new group
+    } else {
+      results.push(mkNonEmptySingleton(v))
+    }
+  })
+
+  return results
 }
 
 export default {
