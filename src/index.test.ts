@@ -127,7 +127,10 @@ describe('NonEmpty', () => {
     it('puts a singleton by itself', () => expect(groupAllWith(x => x, [42])).toEqual([[42]]))
 
     it('respects the grouping key', () =>
-      expect(groupAllWith(x => x > 0, [1, -2, 2, 0, -1])).toEqual([[-2, 0, -1], [1, 2]]))
+      expect(groupAllWith(x => x > 0, [1, -2, 2, 0, -1])).toEqual([
+        [-2, 0, -1],
+        [1, 2]
+      ]))
 
     it('is stable', () => expect(groupAllWith(() => 42, [4, 2, 42])).toEqual([[4, 2, 42]]))
 
@@ -139,7 +142,7 @@ describe('NonEmpty', () => {
     it('calls key at least once per value', () => {
       const key = jest.fn().mockReturnValue(42)
       const values = [1, 2, 3]
-      groupAllWith(key, values);
+      groupAllWith(key, values)
       expect(key.mock.calls.length).toBeGreaterThan(values.length)
     })
   })
