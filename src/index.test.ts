@@ -7,6 +7,7 @@ import {
   headOnNonEmpty,
   tailOnNonEmpty,
   initOnNonEmpty,
+  groupAllWith,
   type NonEmptyArray
 } from '.'
 
@@ -117,6 +118,32 @@ describe('NonEmpty', () => {
       const res = initOnNonEmpty(neArr)
       expect(Array.isArray(res)).toBeTruthy()
       expect(res).toEqual([])
+    })
+  })
+
+  describe('groupAllWith', () => {
+    it('returns empty given empty', () => expect(groupAllWith(x => x, [])).toEqual([]))
+
+    it('puts a singleton by itself', () => expect(groupAllWith(x => x, [42])).toEqual([[42]]))
+
+    it('respects the grouping key', () =>
+      expect(groupAllWith(x => x > 0, [1, -2, 2, 0, -1])).toEqual([
+        [-2, 0, -1],
+        [1, 2]
+      ]))
+
+    it('is stable', () => expect(groupAllWith(() => 42, [4, 2, 42])).toEqual([[4, 2, 42]]))
+
+    it('sorts by key', () =>
+      expect(groupAllWith(x => x, [99, -1, 0, 42, -42])).toEqual([[-42], [-1], [0], [42], [99]]))
+
+    // Not necessarily testing a desired behavior. More showing/documenting a
+    // consequence of the implementation that callers should be aware of.
+    it('calls key at least once per value', () => {
+      const key = jest.fn().mockReturnValue(42)
+      const values = [1, 2, 3]
+      groupAllWith(key, values)
+      expect(key.mock.calls.length).toBeGreaterThan(values.length)
     })
   })
 })

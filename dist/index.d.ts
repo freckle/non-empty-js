@@ -2,7 +2,7 @@ import { type ArrayIterator, type ListIterator } from 'lodash';
 declare class NonEmpty {
 }
 export declare type NonEmptyArray<T> = Array<T> & NonEmpty;
-export declare function mkNonEmpty<T>(array: Array<T>): NonEmptyArray<T> | undefined | null;
+export declare function mkNonEmpty<T>(array: Array<T>): NonEmptyArray<T> | null;
 export declare function mkNonEmptyFromJust<T>(array: Array<T>): NonEmptyArray<T>;
 export declare function mkNonEmptySingleton<T>(elem: T): NonEmptyArray<T>;
 export declare function mkNonEmptyFromHead<T>(head: T, tail: Array<T>): NonEmptyArray<T>;
@@ -15,6 +15,7 @@ export declare function initOnNonEmpty<T>(array: NonEmptyArray<T>): Array<T>;
 export declare function nonEmptyToArray<T>(array: NonEmptyArray<T>): Array<T>;
 export declare function unconsOnNonEmpty<T>(array: NonEmptyArray<T>): [T, Array<T>];
 export declare function flattenOnNonEmpty<T>(array: NonEmptyArray<NonEmptyArray<T>>): NonEmptyArray<T>;
+export declare function groupAllWith<A, B>(key: (a: A) => B, array: Array<A>): Array<NonEmptyArray<A>>;
 declare const _default: {
     mkNonEmpty: typeof mkNonEmpty;
     mkNonEmptySingleton: typeof mkNonEmptySingleton;
