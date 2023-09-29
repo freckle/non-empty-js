@@ -106,7 +106,7 @@ export function groupAllWith<A, B>(key: (a: A) => B, array: Array<A>): Array<Non
     if (lastGroup !== undefined && key(headOnNonEmpty(lastGroup)) === key(v)) {
       lastGroup.push(v)
 
-    // Item doesn't match prior group (or group doesn't exist), make new group
+      // Item doesn't match prior group (or group doesn't exist), make new group
     } else {
       results.push(mkNonEmptySingleton(v))
     }
