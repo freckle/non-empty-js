@@ -13,7 +13,7 @@ class NonEmpty<T> {
 export type NonEmptyArray<T> = Array<T> & NonEmpty<T>
 
 export function mkNonEmpty<T>(array: Array<T>): NonEmptyArray<T> | null {
-  return array.length === 0 ? null : array as NonEmptyArray<T>
+  return array.length === 0 ? null : (array as NonEmptyArray<T>)
 }
 
 export function mkNonEmptyFromJust<T>(array: Array<T>): NonEmptyArray<T> {
