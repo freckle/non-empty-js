@@ -77,7 +77,6 @@ describe('NonEmpty', () => {
     })
 
     test('should throw an error when trying to get the last element on an empty array', () => {
-      // Here we need to force flow to create an invalid empty array
       const invalidNEArr: NonEmptyArray<any> = [] as any
       expect(() => lastOnNonEmpty(invalidNEArr)).toThrow()
     })
@@ -91,7 +90,6 @@ describe('NonEmpty', () => {
     })
 
     test('should throw an error when trying to get the first element on an empty array', () => {
-      // Here we need to force flow to create an invalid empty array
       const invalidNEArr: NonEmptyArray<any> = [] as any
       expect(() => headOnNonEmpty(invalidNEArr)).toThrow()
     })

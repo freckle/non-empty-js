@@ -7,9 +7,8 @@
   "author": "Freckle",
   "license": "MIT",
   "scripts": {
-    "build": "tsc -d && yarn run gen-flow",
-    "gen-flow": "node ./gen-flow.js",
-    "test": "jest && yarn flow",
+    "build": "tsc -d",
+    "test": "jest",
     "format": "prettier --write 'src/**/*.js'",
     "check-git-clean": "./check-git-clean.sh"
   },
@@ -24,8 +23,6 @@
     "@types/jest": "^28.1.1",
     "@types/lodash": "^4.14.182",
     "expect-type": "^0.17.3",
-    "flow-bin": "0.110.0",
-    "flowgen": "^1.20.0",
     "jest": "^27.4.7",
     "prettier": "^2.5.1",
     "ts-jest": "^28.0.4",
