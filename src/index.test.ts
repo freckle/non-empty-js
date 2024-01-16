@@ -17,7 +17,6 @@ describe('NonEmpty', () => {
     it('retains type variable', () => {
       const numbers = [1, 2, 3]
       expectTypeOf(numbers).not.toMatchTypeOf<NonEmptyArray<number>>()
-
     })
   })
 
