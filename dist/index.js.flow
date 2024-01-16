@@ -1,10 +1,10 @@
 //@flow
 import { type ReadOnlyMapIterator } from "lodash";
-declare class NonEmpty {}
-export type NonEmptyArray<T> = Array<T> & NonEmpty;
-declare export function mkNonEmpty<T>(
-  array: Array<T>
-): NonEmptyArray<T> | void | null;
+declare class NonEmpty<T> {
+  0: T;
+}
+export type NonEmptyArray<T> = { ...Array<T>, ...NonEmpty<T> };
+declare export function mkNonEmpty<T>(array: Array<T>): NonEmptyArray<T> | null;
 declare export function mkNonEmptyFromJust<T>(
   array: Array<T>
 ): NonEmptyArray<T>;
@@ -32,6 +32,10 @@ declare export function unconsOnNonEmpty<T>(
 declare export function flattenOnNonEmpty<T>(
   array: NonEmptyArray<NonEmptyArray<T>>
 ): NonEmptyArray<T>;
+declare export function groupAllWith<A, B>(
+  key: (a: A) => B,
+  array: Array<A>
+): Array<NonEmptyArray<A>>;
 declare var _default: {
   mkNonEmpty: typeof mkNonEmpty,
   mkNonEmptySingleton: typeof mkNonEmptySingleton,

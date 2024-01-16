@@ -1,7 +1,8 @@
 import { type ArrayIterator, type ListIterator } from 'lodash';
-declare class NonEmpty {
+declare class NonEmpty<T> {
+    0: T;
 }
-export declare type NonEmptyArray<T> = Array<T> & NonEmpty;
+export declare type NonEmptyArray<T> = Array<T> & NonEmpty<T>;
 export declare function mkNonEmpty<T>(array: Array<T>): NonEmptyArray<T> | null;
 export declare function mkNonEmptyFromJust<T>(array: Array<T>): NonEmptyArray<T>;
 export declare function mkNonEmptySingleton<T>(elem: T): NonEmptyArray<T>;

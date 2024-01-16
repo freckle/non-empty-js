@@ -6,12 +6,14 @@ import sortBy from 'lodash/sortBy'
 import {type ArrayIterator, type ListIterator} from 'lodash'
 import {fromJust} from '@freckle/maybe'
 
-class NonEmpty {}
+class NonEmpty<T> {
+  0: T
+}
 
-export type NonEmptyArray<T> = Array<T> & NonEmpty
+export type NonEmptyArray<T> = Array<T> & NonEmpty<T>
 
 export function mkNonEmpty<T>(array: Array<T>): NonEmptyArray<T> | null {
-  return array.length === 0 ? null : (array as any as NonEmptyArray<T>)
+  return array.length === 0 ? null : array as NonEmptyArray<T>
 }
 
 export function mkNonEmptyFromJust<T>(array: Array<T>): NonEmptyArray<T> {

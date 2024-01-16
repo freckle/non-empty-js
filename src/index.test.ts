@@ -16,7 +16,6 @@ describe('NonEmpty', () => {
   describe('type NonEmptyArray', () => {
     it('retains type variable', () => {
       const numbers = [1, 2, 3]
-      // @ts-expect-error: This will not error after bug fix
       expectTypeOf(numbers).not.toMatchTypeOf<NonEmptyArray<number>>()
 
     })
