@@ -22,7 +22,7 @@
     "@babel/preset-env": "^7.16.11",
     "@types/jest": "^28.1.1",
     "@types/lodash": "^4.14.182",
-    "expect-type": "^0.17.3",
+    "expect-type": "^0.19.0",
     "jest": "^27.4.7",
     "prettier": "^2.5.1",
     "ts-jest": "^28.0.4",
