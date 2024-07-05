@@ -994,9 +994,9 @@
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
 "@freckle/maybe@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@freckle/maybe/-/maybe-2.1.0.tgz#ef3ab0cf5e7bdfc69f2d0a86ddd59a6c8397c6c8"
-  integrity sha512-WF6McGA11NoxgEO2gXaELPN1T1jY9p9IZUzmY1AJAtsZoVpyZns0vNNdUh60Z3Bp4hJhaThMtIcQjmU5fFTdvg==
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@freckle/maybe/-/maybe-2.2.0.tgz#51d21c170e965b3df189bbaebb5f0af597d2a3af"
+  integrity sha512-fwsANtzHafJk+UI4BMvp3J5hJNaaluaLXb7TJ0AqUY3HTU4Z+Gtpit1XcuYTV+ao73ykqhgmiq8xFLx4ygBIQg==
   dependencies:
     lodash "^4.17.21"
 
