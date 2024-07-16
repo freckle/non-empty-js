@@ -157,19 +157,24 @@ describe('NonEmpty', () => {
   describe(groupBy.name, () => {
     it('returns empty given empty', () => expect(groupBy(x => x, [])).toEqual(new Map()))
 
-    it('puts a singleton by itself', () => expect(groupBy(x => x, [42])).toEqual(new Map([[42, [42]]])))
+    it('puts a singleton by itself', () =>
+      expect(groupBy(x => x, [42])).toEqual(new Map([[42, [42]]])))
 
     it('respects the grouping key', () =>
-     expect(groupBy(x => x > 0, [1 ,-1, -2, 2, 0])).toEqual(new Map([
-        [false,  [-1, -2, 0]],
-        [true, [1, 2]]
-      ]))
-    )
+      expect(groupBy(x => x > 0, [1, -1, -2, 2, 0])).toEqual(
+        new Map([
+          [false, [-1, -2, 0]],
+          [true, [1, 2]]
+        ])
+      ))
 
-    it('is stable', () => expect(groupBy(() => 42, [4, 2, 42])).toEqual(new Map([[42,  [4, 2, 42] ]])))
+    it('is stable', () =>
+      expect(groupBy(() => 42, [4, 2, 42])).toEqual(new Map([[42, [4, 2, 42]]])))
+
+    const values = [99, -1, 0, 42, -42]
 
     it('does not sort by key', () =>
-      expect(groupBy(x => x, [99, -1, 0, 42, -42])).toEqual(new Map([[99,  [99]], [-1, [-1]], [0, [0]], [42, [42]], [-42, [-42]]])))
+      expect(groupBy(x => x, values)).toEqual(new Map(values.map(v => [v, [v]]))))
 
     it('calls key once per value', () => {
       const key = jest.fn().mockReturnValue(42)
