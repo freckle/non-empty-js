@@ -117,6 +117,26 @@ export function groupAllWith<A, B>(key: (a: A) => B, array: Array<A>): Array<Non
   return results
 }
 
+// Group results into non-empty groups. Note that the returned `Map` preserves
+// The order of the original array, within groups (it doesn't sort like
+//`groupAllWith`).
+export function groupBy<A, B>(key: (a: A) => B, array: Array<A>): Map<B, NonEmptyArray<A>> {
+  const results = new Map<B, NonEmptyArray<A>>()
+
+  for (const value of array) {
+    const k = key(value)
+    const accum = results.get(k)
+
+    if (accum === undefined) {
+      results.set(k, mkNonEmptySingleton(value))
+    } else {
+      accum.push(value)
+    }
+  }
+
+  return results
+}
+
 export default {
   mkNonEmpty,
   mkNonEmptySingleton,
