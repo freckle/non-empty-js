@@ -1961,10 +1961,10 @@ exit@^0.1.2:
   resolved "https://registry.yarnpkg.com/exit/-/exit-0.1.2.tgz#0632638f8d877cc82107d30a0fff1a17cba1cd0c"
   integrity sha1-BjJjj42HfMghB9MKD/8aF8uhzQw=
 
-expect-type@^0.20.0:
-  version "0.20.0"
-  resolved "https://registry.yarnpkg.com/expect-type/-/expect-type-0.20.0.tgz#be0db937492df1db368ad772b977336f3395a152"
-  integrity sha512-uHaC9LYNv6BcW+8SvXcwUUDCrrUxt3GSa61DFvTHj8JC+M0hekMFBwMlCarLQDk5bbpZ2vStpnQPIwRuV98YMw==
+expect-type@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/expect-type/-/expect-type-1.0.0.tgz#dadeec4ddcc3965a962e4a79ce744927f57c5f8b"
+  integrity sha512-WcdwgWmGAE48kSHjxPVLriBuvJdJdi1VKTh7HmHvcm6WPdIT1Z04wUVX8BLiqnq0Rz5SnfJ+P0kM1RBqSLLoPQ==
 
 expect@^27.5.1:
   version "27.5.1"
