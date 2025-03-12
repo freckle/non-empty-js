@@ -1,0 +1,6 @@
+{
+  "extends": [
+    "github>freckle/renovate-config"
+  ],
+  "minimumReleaseAge": "0 days"
+}
