@@ -24,7 +24,7 @@
     "@types/lodash": "^4.17.21",
     "expect-type": "^1.2.2",
     "jest": "^27.5.1",
-    "prettier": "^3.7.3",
+    "prettier": "^3.7.4",
     "ts-jest": "^29.4.6",
     "typescript": "^5.9.3"
   }
