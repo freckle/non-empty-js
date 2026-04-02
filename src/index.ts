@@ -1,8 +1,8 @@
-import first from 'lodash/first'
-import last from 'lodash/last'
-import map from 'lodash/map'
-import flatten from 'lodash/flatten'
-import sortBy from 'lodash/sortBy'
+import {first} from 'lodash'
+import {last} from 'lodash'
+import {map} from 'lodash'
+import {flatten} from 'lodash'
+import {sortBy} from 'lodash'
 import {type ArrayIterator, type ListIterator} from 'lodash'
 import {fromJust} from '@freckle/maybe'
 
