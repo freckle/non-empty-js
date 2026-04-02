@@ -1,4 +1,4 @@
-import { type ArrayIterator, type ListIterator } from 'lodash';
+import { ArrayIterator, ListIterator } from 'lodash';
 declare class NonEmpty<T> {
     0: T;
 }
