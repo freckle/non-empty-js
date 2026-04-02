@@ -1,3 +1,5 @@
+import {vi} from 'vitest'
+
 import {expectTypeOf} from 'expect-type'
 import {
   mkNonEmpty,
@@ -11,7 +13,7 @@ import {
   groupAllWith,
   groupBy,
   type NonEmptyArray
-} from '.'
+} from './index.js'
 
 describe('NonEmpty', () => {
   describe('type NonEmptyArray', () => {
@@ -147,7 +149,7 @@ describe('NonEmpty', () => {
     // Not necessarily testing a desired behavior. More showing/documenting a
     // consequence of the implementation that callers should be aware of.
     it('calls key at least once per value', () => {
-      const key = jest.fn().mockReturnValue(42)
+      const key = vi.fn(() => 42)
       const values = [1, 2, 3]
       groupAllWith(key, values)
       expect(key.mock.calls.length).toBeGreaterThan(values.length)
@@ -177,7 +179,7 @@ describe('NonEmpty', () => {
       expect(groupBy(x => x, values)).toEqual(new Map(values.map(v => [v, [v]]))))
 
     it('calls key once per value', () => {
-      const key = jest.fn().mockReturnValue(42)
+      const key = vi.fn(() => 42)
       const values = [1, 2, 3]
       groupBy(key, values)
       expect(key.mock.calls.length).toEqual(values.length)
