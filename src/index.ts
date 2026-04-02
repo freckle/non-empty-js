@@ -1,9 +1,4 @@
-import first from 'lodash/first'
-import last from 'lodash/last'
-import map from 'lodash/map'
-import flatten from 'lodash/flatten'
-import sortBy from 'lodash/sortBy'
-import {type ArrayIterator, type ListIterator} from 'lodash'
+import {ArrayIterator, ListIterator, first, flatten, last, map, sortBy} from 'lodash'
 import {fromJust} from '@freckle/maybe'
 
 class NonEmpty<T> {
