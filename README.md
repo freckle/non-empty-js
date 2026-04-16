@@ -1,2 +1,3 @@
 # non-empty-js
-Construct and operate on non-empry arrays with type-safety
+
+Construct and operate on non-empty arrays with type-safety
