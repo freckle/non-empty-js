@@ -1133,12 +1133,12 @@
   resolved "https://registry.yarnpkg.com/@exodus/bytes/-/bytes-1.15.0.tgz#54479e0f406cbad024d6fe1c3190ecca4468df3b"
   integrity sha512-UY0nlA+feH81UGSHv92sLEPLCeZFjXOuHhrIo0HQydScuQc8s0A7kL/UdgwgDq8g8ilksmuoF35YVTNphV2aBQ==
 
-"@freckle/maybe@^2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@freckle/maybe/-/maybe-2.2.0.tgz#51d21c170e965b3df189bbaebb5f0af597d2a3af"
-  integrity sha512-fwsANtzHafJk+UI4BMvp3J5hJNaaluaLXb7TJ0AqUY3HTU4Z+Gtpit1XcuYTV+ao73ykqhgmiq8xFLx4ygBIQg==
+"@freckle/maybe@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@freckle/maybe/-/maybe-2.3.0.tgz#e9a1e408022cd8b2c97194bd4e8e7a32c5883a07"
+  integrity sha512-I+qNU+CUEQORuKXUK35W2SMLU9KU5j+EgneJw84fe/sJyIvitDD0zfSWCaTnkWGQTl5IFJS8l3WGSGQtsAikiQ==
   dependencies:
-    lodash "^4.17.21"
+    lodash "^4.18.1"
 
 "@jridgewell/gen-mapping@^0.3.12", "@jridgewell/gen-mapping@^0.3.5":
   version "0.3.13"
@@ -1844,15 +1844,10 @@ lodash.debounce@^4.0.8:
   resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
   integrity sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==
 
-lodash@4.18.1:
+lodash@4.18.1, lodash@^4.18.1:
   version "4.18.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.18.1.tgz#ff2b66c1f6326d59513de2407bf881439812771c"
   integrity sha512-dMInicTPVE8d1e5otfwmmjlxkZoUpiVLwyeTdUsi/Caj/gfzzblBcCE5sRHV/AsjuCmxWrte2TNGSYuCeCq+0Q==
-
-lodash@^4.17.21:
-  version "4.17.21"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
-  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 lru-cache@^11.2.7:
   version "11.2.7"
