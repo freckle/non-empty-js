@@ -23,7 +23,7 @@
     "@babel/preset-env": "^8.0.2",
     "@types/lodash": "^4.17.24",
     "expect-type": "^1.4.0",
-    "jsdom": "^29.1.1",
+    "jsdom": "^30.0.0",
     "prettier": "^3.9.6",
     "typescript": "^7.0.2",
     "vitest": "^4.1.10"
