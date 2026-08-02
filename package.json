@@ -21,7 +21,7 @@
     "@babel/cli": "^8.0.4",
     "@babel/core": "^8.0.1",
     "@babel/preset-env": "^8.0.2",
-    "@types/lodash": "^4.17.24",
+    "@types/lodash": "^4.17.25",
     "expect-type": "^1.4.0",
     "jsdom": "^30.0.1",
     "prettier": "^3.9.6",
