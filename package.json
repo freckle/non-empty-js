@@ -18,7 +18,6 @@
   },
   "devDependencies": {
     "expect-type": "^1.4.0",
-    "jsdom": "^30.0.1",
     "prettier": "^3.9.6",
     "typescript": "^7.0.2",
     "vitest": "^4.1.11"
