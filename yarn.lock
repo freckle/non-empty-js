@@ -95,12 +95,10 @@
   resolved "https://registry.yarnpkg.com/@exodus/bytes/-/bytes-1.15.1.tgz#b13bc464ca162c17abf0837fb3a11aeab79e45d1"
   integrity sha512-S6mL0yNB/Abt9Ei4tq8gDhcczc4S3+vQ4ra7vxnAf+YHC02srtqxKKZghx2Dq6p0e66THKwR6r8N6P95wEty7Q==
 
-"@freckle/maybe@^2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@freckle/maybe/-/maybe-2.3.0.tgz#e9a1e408022cd8b2c97194bd4e8e7a32c5883a07"
-  integrity sha512-I+qNU+CUEQORuKXUK35W2SMLU9KU5j+EgneJw84fe/sJyIvitDD0zfSWCaTnkWGQTl5IFJS8l3WGSGQtsAikiQ==
-  dependencies:
-    lodash "^4.18.1"
+"@freckle/maybe@^2.3.1":
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/@freckle/maybe/-/maybe-2.3.1.tgz#4fabdd0d9320aae0654c67a805eef8b5133126b5"
+  integrity sha512-lhomXb70nQbq1ASaDDc7PoPMrT7kav/FcYsoD6yfFetreN03SbZb1dawxAZxMs7ojx0eqGHaStut9A+hA60QoQ==
 
 "@jridgewell/sourcemap-codec@^1.5.5":
   version "1.5.5"
@@ -596,7 +594,7 @@ lightningcss@^1.32.0:
     lightningcss-win32-arm64-msvc "1.32.0"
     lightningcss-win32-x64-msvc "1.32.0"
 
-lodash@4.18.1, lodash@^4.18.1:
+lodash@4.18.1:
   version "4.18.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.18.1.tgz#ff2b66c1f6326d59513de2407bf881439812771c"
   integrity sha512-dMInicTPVE8d1e5otfwmmjlxkZoUpiVLwyeTdUsi/Caj/gfzzblBcCE5sRHV/AsjuCmxWrte2TNGSYuCeCq+0Q==
