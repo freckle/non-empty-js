@@ -10,6 +10,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.build.json -d",
     "test": "vitest run",
+    "check-esm": "node --input-type=module -e \"import './dist/index.js'\"",
     "format": "prettier --write 'src/**/*.ts'",
     "check-git-clean": "./check-git-clean.sh"
   },
