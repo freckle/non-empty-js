@@ -14,7 +14,7 @@
     "check-git-clean": "./check-git-clean.sh"
   },
   "dependencies": {
-    "@freckle/maybe": "^2.3.1",
+    "@freckle/maybe": "^3.0.0",
     "lodash": "4.18.1"
   },
   "devDependencies": {

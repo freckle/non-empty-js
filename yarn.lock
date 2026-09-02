@@ -95,10 +95,10 @@
   resolved "https://registry.yarnpkg.com/@exodus/bytes/-/bytes-1.15.1.tgz#b13bc464ca162c17abf0837fb3a11aeab79e45d1"
   integrity sha512-S6mL0yNB/Abt9Ei4tq8gDhcczc4S3+vQ4ra7vxnAf+YHC02srtqxKKZghx2Dq6p0e66THKwR6r8N6P95wEty7Q==
 
-"@freckle/maybe@^2.3.1":
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/@freckle/maybe/-/maybe-2.3.1.tgz#4fabdd0d9320aae0654c67a805eef8b5133126b5"
-  integrity sha512-lhomXb70nQbq1ASaDDc7PoPMrT7kav/FcYsoD6yfFetreN03SbZb1dawxAZxMs7ojx0eqGHaStut9A+hA60QoQ==
+"@freckle/maybe@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@freckle/maybe/-/maybe-3.0.0.tgz#dd2cd9451fcf891d80de4fb832d22764df1ca3b5"
+  integrity sha512-Fbur69nzwdHxz6PvwXrD3wurBnJa2/YcE4La8kDJ8IGsbCKdgWBk6i/6d3VbS8SCYJbkAjR+ghdN8BfN0lG0pg==
 
 "@jridgewell/sourcemap-codec@^1.5.5":
   version "1.5.5"
