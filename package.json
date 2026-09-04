@@ -33,7 +33,7 @@
     "@vitest/coverage-v8": "^4.1.11",
     "eslint": "^10.9.1",
     "expect-type": "^1.4.0",
-    "knip": "^6.32.3",
+    "knip": "^6.34.0",
     "prettier": "^3.9.6",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.69.0",
