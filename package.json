@@ -31,7 +31,7 @@
     "@eslint/js": "^10.0.1",
     "@types/lodash": "^4.17.25",
     "@vitest/coverage-v8": "^4.1.11",
-    "eslint": "^10.9.1",
+    "eslint": "^10.10.0",
     "expect-type": "^1.4.0",
     "knip": "^6.34.0",
     "prettier": "^3.9.6",
