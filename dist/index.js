@@ -1,4 +1,3 @@
-import { first, flatten, last, map, sortBy } from 'lodash';
 import { fromJust } from '@freckle/maybe';
 class NonEmpty {
     0;
@@ -19,10 +18,10 @@ export function mkNonEmptyFromLast(init, last) {
     return fromJust(mkNonEmpty(init.concat([last])), "This definitely shouldn't happen! We created a non empty array from the last element and an array");
 }
 export function mapOnNonEmpty(nonEmpty, f) {
-    return fromJust(mkNonEmpty(map(nonEmpty, f)), 'Array that should have been non-empty was empty');
+    return fromJust(mkNonEmpty(nonEmpty.map(f)), 'Array that should have been non-empty was empty');
 }
 export function lastOnNonEmpty(array) {
-    const lastElem = last(array);
+    const lastElem = array[array.length - 1];
     if (lastElem === undefined) {
         throw new TypeError("This definitely shouldn't happen! The types declare this array to be non-empty");
     }
@@ -31,7 +30,7 @@ export function lastOnNonEmpty(array) {
     }
 }
 export function headOnNonEmpty(array) {
-    const firstElem = first(array);
+    const firstElem = array[0];
     if (firstElem === undefined) {
         throw new TypeError("This definitely shouldn't happen! The types declare this array to be non-empty");
     }
@@ -52,16 +51,46 @@ export function unconsOnNonEmpty(array) {
     return [headOnNonEmpty(array), tailOnNonEmpty(array)];
 }
 export function flattenOnNonEmpty(array) {
-    return fromJust(mkNonEmpty(flatten(nonEmptyToArray(array))), 'Array that should have been non-empty was empty');
+    return fromJust(mkNonEmpty(nonEmptyToArray(array).flat()), 'Array that should have been non-empty was empty');
+}
+// lodash's sortBy put these keys after every orderable key, in this order:
+// symbols, null, undefined, NaN. A bare `a < b` cannot reproduce that: it
+// throws on symbols, treats null as 0, and finds undefined and NaN unordered
+// against everything. NaN keys still form one group per item, because
+// groupAllWith compares keys with ===.
+function keyRank(value) {
+    if (typeof value === 'symbol')
+        return 1;
+    if (value === null)
+        return 2;
+    if (value === undefined)
+        return 3;
+    if (typeof value === 'number' && Number.isNaN(value))
+        return 4;
+    return 0;
+}
+function compareKeys(a, b) {
+    const rankA = keyRank(a);
+    const rankB = keyRank(b);
+    if (rankA !== rankB) {
+        return rankA - rankB;
+    }
+    return rankA === 0 ? (a < b ? -1 : a > b ? 1 : 0) : 0;
 }
 // https://hackage.haskell.org/package/base-4.18.1.0/docs/Data-List-NonEmpty.html#v:groupAllWith
 // `key` is used for sorting and equality comparisons. It is called at least
 // twice per item
 export function groupAllWith(key, array) {
-    const sorted = sortBy(array, key);
+    // Decorated so key runs once per item for the sort rather than twice per
+    // comparison. Array.prototype.sort is stable, so equal keys keep their
+    // original order.
+    const sorted = array
+        .map((value) => [key(value), value])
+        .sort(([a], [b]) => compareKeys(a, b))
+        .map(([, value]) => value);
     const results = [];
     sorted.forEach(v => {
-        const lastGroup = last(results);
+        const lastGroup = results[results.length - 1];
         // Item matches prior group so put it there
         if (lastGroup !== undefined && key(headOnNonEmpty(lastGroup)) === key(v)) {
             lastGroup.push(v);

@@ -194,6 +194,32 @@ describe('NonEmpty', () => {
     it('sorts by key', () =>
       expect(groupAllWith(x => x, [99, -1, 0, 42, -42])).toEqual([[-42], [-1], [0], [42], [99]]))
 
+    it('puts symbol, null, undefined and NaN keys after orderable keys', () => {
+      const s = Symbol('s')
+      const items = [NaN, 1, undefined, s, null, 0, null, s].map(k => ({k}))
+      expect(groupAllWith(o => o.k, items).map(g => g.map(o => o.k))).toEqual([
+        [0],
+        [1],
+        [s, s],
+        [null, null],
+        [undefined],
+        [NaN]
+      ])
+    })
+
+    it('keeps null keys apart from 0', () =>
+      expect(groupAllWith(x => x, [0, null, 0])).toEqual([[0, 0], [null]]))
+
+    it('sorts distinct symbol keys without throwing', () => {
+      const a = Symbol('a')
+      const b = Symbol('b')
+      expect(groupAllWith(x => x, [a, b, 1])).toEqual([[1], [a], [b]])
+    })
+
+    // NaN !== NaN, so NaN keys sort together but never share a group
+    it('gives each NaN key its own group', () =>
+      expect(groupAllWith(o => o.k, [{k: NaN}, {k: NaN}])).toHaveLength(2))
+
     // Not necessarily testing a desired behavior. More showing/documenting a
     // consequence of the implementation that callers should be aware of.
     it('calls key at least once per value', () => {
