@@ -1,6 +1,11 @@
 {
   "extends": "@freckle/tsconfig/library.json",
   "compilerOptions": {
+    // Lower than target on purpose: tsc does not polyfill library methods, and
+    // the megarepo educator apps ship to chrome87/safari14 with no polyfill
+    // (freckle/megarepo#43726). This rejects .at(), .toSorted() and similar.
+    // It does not cover syntax, which target still emits as ES2023.
+    "lib": ["ES2019"],
     "rootDir": "src",
     "outDir": "dist",
     "types": ["vitest/globals"]

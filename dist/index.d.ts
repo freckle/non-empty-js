@@ -1,4 +1,3 @@
-import { ArrayIterator, ListIterator } from 'lodash';
 declare class NonEmpty<T> {
     0: T;
 }
@@ -8,7 +7,7 @@ export declare function mkNonEmptyFromJust<T>(array: Array<T>): NonEmptyArray<T>
 export declare function mkNonEmptySingleton<T>(elem: T): NonEmptyArray<T>;
 export declare function mkNonEmptyFromHead<T>(head: T, tail: Array<T>): NonEmptyArray<T>;
 export declare function mkNonEmptyFromLast<T>(init: Array<T>, last: T): NonEmptyArray<T>;
-export declare function mapOnNonEmpty<T, U>(nonEmpty: NonEmptyArray<T>, f: ListIterator<T, U> | ArrayIterator<T, U>): NonEmptyArray<U>;
+export declare function mapOnNonEmpty<T, U>(nonEmpty: NonEmptyArray<T>, f: (value: T, index: number, array: Array<T>) => U): NonEmptyArray<U>;
 export declare function lastOnNonEmpty<T>(array: NonEmptyArray<T>): T;
 export declare function headOnNonEmpty<T>(array: NonEmptyArray<T>): T;
 export declare function tailOnNonEmpty<T>(array: NonEmptyArray<T>): Array<T>;
